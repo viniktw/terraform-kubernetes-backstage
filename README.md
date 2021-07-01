@@ -1,2 +1,2 @@
 # terraform-kubernetes-backstage
-My backstage rnning on kubernetes
+My backstage running on kubernetes
