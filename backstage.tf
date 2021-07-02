@@ -1,3 +1,6 @@
+locals {
+  domain_fqdn = "${var.app_name}.${var.my_domain}"
+}
 
 resource "kubernetes_secret" "backstage_secret" {
   metadata {
@@ -123,7 +126,7 @@ resource "kubernetes_ingress" "backstage_ingress" {
     ingress_class_name = "public"
 
     rule {
-      host = var.my_domain
+      host = local.domain_fqdn
 
       http {
         path {
